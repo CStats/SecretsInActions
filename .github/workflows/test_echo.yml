@@ -21,4 +21,8 @@ jobs:
         super_secret: ${{ secrets.TEST }}
       run: |
         echo $super_secret
-        
+    - name: Testing secret comparison
+      env: # Or as an environment variable
+        super_secret: ${{ secrets.TEST2 }}
+      if: $super_secret == 'TEST' 
+      run: echo The test password was checked as correct.       
