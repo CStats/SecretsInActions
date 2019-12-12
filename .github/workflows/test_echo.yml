@@ -22,7 +22,5 @@ jobs:
       run: |
         echo $super_secret
     - name: Testing secret comparison
-      env: # Or as an environment variable
-        super_secret2: ${{ secrets.TEST2 }}
-      if: super_secret2 == 'TEST' 
-      run: echo The test password was checked as correct.       
+      if: github.event_name == 'pull_request' && github.event.action == 'unassigned'
+      run: echo This event is a pull request that had an assignee removed.       
