@@ -22,5 +22,5 @@ jobs:
       run: |
         echo $super_secret
     - name: Testing secret comparison
-      if: TEST=='TEST' 
+      if: $super_secret=='TEST' 
       run: echo TEST==TEST.       
