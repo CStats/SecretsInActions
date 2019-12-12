@@ -13,4 +13,9 @@ jobs:
         super_secret: ${{ secrets.TEST }}
       run: |
         echo $super_secret
+    - uses: actions/checkout@master
+    - uses: r-lib/actions/setup-r@v1
+      with:
+         r-version: '3.5.3' # The R version to download (if necessary) and use.
+    - run: Rscript -e 'print("hello")'
       
