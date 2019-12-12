@@ -22,5 +22,5 @@ jobs:
       run: |
         echo $super_secret
     - name: Testing secret comparison
-      if: github.event_name == 'pull_request' && github.event.action == 'unassigned'
-      run: echo This event is a pull request that had an assignee removed.       
+      if: 'TEST' == 'TEST' 
+      run: echo TEST==TEST.       
