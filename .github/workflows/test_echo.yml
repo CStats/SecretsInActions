@@ -18,7 +18,7 @@ jobs:
         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.:  
     - name: Testing secret echo
       env: # Or as an environment variable
-        super_secret: ${{ secrets.SuperSecret }}
+        super_secret: ${{ secrets.TEST }}
       run: |
         echo ${{ secrets.SuperSecret }}
         
