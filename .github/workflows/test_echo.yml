@@ -23,6 +23,6 @@ jobs:
         echo $super_secret
     - name: Testing secret comparison
       env: # Or as an environment variable
-        super_secret: ${{ secrets.TEST2 }}
-      if: $super_secret == 'TEST' 
+        super_secret2: ${{ secrets.TEST2 }}
+      if: ${{ secrets.TEST2 }} == 'TEST' 
       run: echo The test password was checked as correct.       
