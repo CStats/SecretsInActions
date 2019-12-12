@@ -7,15 +7,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
-    - name: Hello world action
-      env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
-      run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.:  
+    steps: 
     - name: Testing secret echo
       env: # Or as an environment variable
         super_secret: ${{ secrets.TEST }}
@@ -24,5 +16,5 @@ jobs:
     - name: Testing secret comparison
       env: # Or as an environment variable
         super_secret: ${{ secrets.TEST2 }}
-      if: $super_secret=='TEST' 
+      if: 'TEST' 
       run: echo TEST==TEST.       
