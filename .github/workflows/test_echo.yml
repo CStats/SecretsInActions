@@ -13,8 +13,4 @@ jobs:
         super_secret: ${{ secrets.TEST }}
       run: |
         echo $super_secret
-    - name: Testing secret comparison
-      env: # Or as an environment variable
-        super_secret: ${{ secrets.TEST2 }}
-      if: 'TEST' 
-      run: echo TEST==TEST.       
+      
